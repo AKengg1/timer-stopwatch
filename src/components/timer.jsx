@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import Display from "./Display";
+import Display from "./display";
 
 function Timer() {
   const [hours, setHours]       = useState(0);
