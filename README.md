@@ -1,16 +1,43 @@
-# React + Vite
+# Stopwatch & Timer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A clean, dark-themed time utility built with React.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Stopwatch** — start, pause, resume, reset, and lap tracking with best/worst split highlighting
+- **Timer** — custom hour/minute/second input with a live progress bar that shifts amber → red as time runs low
+- Smooth centisecond display
+- Interval cleanup on unmount — no memory leaks
+- Fully responsive
 
-## React Compiler
+## Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React (Vite)
+- CSS custom properties — no UI library
+- Syne + Syne Mono (Google Fonts)
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+npm run dev
+```
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── Stopwatch.jsx
+│   ├── Timer.jsx
+│   └── Display.jsx
+├── App.jsx
+├── App.css
+└── main.jsx
+```
+
+## Notes
+
+- Timer input clamps hours to 99, minutes and seconds to 59
+- Lap list highlights the fastest split in purple and the slowest in red
+- Progress bar color: purple → amber (under 25%) → red (under 10%)
